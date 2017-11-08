@@ -38,17 +38,22 @@ class DataService {
 	
 	func createUser(uid:String,userData: Dictionary<String,Any>) {
 		USERS_REF.child(uid).updateChildValues(userData)
-		
 	}
 	
-	func createPost(withMessage message: String, forUID uid:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
+    func createPost(withMessage message: String, forUID uid:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
+//    func createPost(withMessage message: String, forUID uid:String,forPostId postId:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
 		if groupKey != nil {
 			
 		} else {
-			FEED_REF.childByAutoId().updateChildValues(["content":message, "senderId": uid])
+            FEED_REF.childByAutoId().updateChildValues(["content":message, "senderId": uid])
+//            FEED_REF.childByAutoId().updateChildValues(["content":message, "senderId": uid, "postId":postId])
 			sendComplete(true)
 		}
 	}
+    
+    func deletePost(forUID uid: String,sendComplete:@escaping(_ status: Bool) -> ()) {
+        FEED_REF.child(uid).removeValue()
+    }
 	
 	func getUsername(forUID uid: String, handler: @escaping (_ username: String) -> ()) {
 		
@@ -70,7 +75,7 @@ class DataService {
 			for post in postFeedSnapshot {
 				let content = post.childSnapshot(forPath: "content").value as! String
 				let senderId = post.childSnapshot(forPath: "senderId").value as! String
-				let post = Post(content: content, senderId: senderId)
+                let post = Post(content: content, senderId: senderId)
 				postArray.append(post)
 			}
 			

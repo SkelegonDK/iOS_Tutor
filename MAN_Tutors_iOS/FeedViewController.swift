@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 	class FeedViewController: UIViewController {
 
@@ -56,7 +57,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostTableViewCell else { return UITableViewCell() }
 		
-		let image = UIImage(named: "issue")
+		let image = UIImage(named: "issue-29")
 		let post = postArray[indexPath.row]
 //		let number = "You are number " + String(postArray.count - indexPath.row) + " in line"
 		let number = "You are number " + String(indexPath.row + 1) + " in line"
@@ -69,6 +70,27 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 		
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return true
+	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		
+		if (editingStyle == UITableViewCellEditingStyle.delete) {
+			// handle delete (by removing the data from your array and updating the tableview
+			
+			//TODO: delete tableview cell from database by getting post id and delete child
+			//TODO: Deleting from Firebase and reloading the table should be enough!
+			let deletedPost = postArray[indexPath.row].content
+//            DataService.deletePost(deletedPost)
+            
+			postArray.remove(at: indexPath.row)
+			self.tableView.deleteRows(at: [indexPath], with: .bottom)
+			self.tableView.reloadData()
+			
+		}
 	}
 	
 }

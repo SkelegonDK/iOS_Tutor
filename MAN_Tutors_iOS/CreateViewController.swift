@@ -48,12 +48,15 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 	@IBAction func SendBtnAction(_ sender: Any) {
 		if textView.text != nil && textView.text != textViewPlaceholder  {
 			SendBtn.isEnabled = false
+			
 			DataService.instance.createPost(withMessage: textView.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil, sendComplete:
 				{(isComplete) in if isComplete {
+					
 					self.SendBtn.isEnabled = true
 					self.dismiss(animated: true, completion: nil)
 				
 				} else {
+
 					self.SendBtn.isEnabled = true
 					print("error")
 				}
@@ -71,4 +74,5 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 		textView.resignFirstResponder()
 	}
 }
+
 
