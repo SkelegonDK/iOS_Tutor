@@ -73,7 +73,12 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		return true
+		// TODO: refactor into function that checks current user with message sender
+		let currentUser = Auth.auth().currentUser!
+		if (currentUser.uid == postArray[indexPath.row].senderId) {
+			return true
+		}
+			return false
 	}
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -83,14 +88,19 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 			
 			//TODO: delete tableview cell from database by getting post id and delete child
 			//TODO: Deleting from Firebase and reloading the table should be enough!
-			let deletedPost = postArray[indexPath.row].content
-//            DataService.deletePost(deletedPost)
-            
-			postArray.remove(at: indexPath.row)
+			let deletedPost = postArray[indexPath.row].postId
+			let senderId = postArray[indexPath.row].senderId
+			print(deletedPost)
+			
+			DataService.instance.deletePost(forUID: deletedPost, forSenderId: senderId, sendComplete: { (true) in
+				print("deleted")
+				
+			})
+			self.postArray.remove(at: indexPath.row)
 			self.tableView.deleteRows(at: [indexPath], with: .bottom)
 			self.tableView.reloadData()
-			
 		}
+		
 	}
 	
 }

@@ -71,6 +71,5 @@ extension GroupViewController: UITableViewDelegate,UITableViewDataSource {
 		return 100
 	}
 	
-	
 }
 

@@ -50,7 +50,7 @@ class DataService {
 			sendComplete(true)
 		}
 	}
-    
+    /// Function checks post id against current user id, before deleting the post object from the database
 	func deletePost(forUID uid: String, forSenderId senderId: String, sendComplete:@escaping(_ status: Bool) -> ()) {
 		if (senderId == Auth.auth().currentUser!.uid) {
 		FEED_REF.child(uid).removeValue()
@@ -79,8 +79,8 @@ class DataService {
 				let content = post.childSnapshot(forPath: "content").value as! String
 				let senderId = post.childSnapshot(forPath: "senderId").value as! String
 				/// PostId is necessary for effective post identification/deletion, but not vital to the program
-				let postId = post.childSnapshot(forPath: "uid").value as! String
-                let post = Post(content: content, senderId: senderId)
+				let postId = post.key
+				let post = Post(content: content, senderId: senderId, postId:postId)
 				postArray.append(post)
 			}
 			
@@ -146,7 +146,8 @@ class DataService {
 			for groupMessage in groupMessageSnapshot {
 				let content = groupMessage.childSnapshot(forPath: "messages").value as! String
 				let senderId = groupMessage.childSnapshot(forPath: "senderId").value as! String
-				let message = Post(content: content, senderId: senderId)
+				let postId = groupMessage.key
+				let message = Post(content: content, senderId: senderId,postId: postId)
 				messageArray.append(message)
 			}
 			handler(messageArray)
