@@ -18,11 +18,12 @@ class AuthViewController: UIViewController {
     }
 
 	override func viewDidAppear(_ animated: Bool) {
+		/// If the user is logged in, dissmiss this view and go to app. If not go to view and create a user.
 		if Auth.auth().currentUser != nil {
 			dismiss(animated: true, completion: nil)
 		}
 	}
-    
+    /// Btn presents login view
 	@IBAction func EmailBtnAction(_ sender: Any) {
 		
 		let loginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController")

@@ -172,7 +172,7 @@ class DataService {
 		GROUPS_REF.observeSingleEvent(of: .value, with: { (groupSnapshot) in
 			guard let groupSnapshot = groupSnapshot.children.allObjects as? [DataSnapshot] else {return}
 			
-			print(String(describing: groupSnapshot))
+			//print(String(describing: groupSnapshot))
 			for group in groupSnapshot {
 				let memberArray = group.childSnapshot(forPath: "members").value as! [String]
 				if memberArray.contains((Auth.auth().currentUser?.uid)!) {

@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
 				AuthService.instance.registerUser(withEmail: self.emailInput.text!, andPassword: self.passwordInput.text! , userCreated: { (success, regError) in if success {
 					AuthService.instance.LoginUser(withEmail: self.emailInput.text!, andPassword: self.passwordInput.text!, loginAccepted: { (success, nil) in
 						self.dismiss(animated: true, completion: nil)
-						print("registered user")
+						//print("registered user")
 					})
 				}else {
 					print(String(describing: regError?.localizedDescription))

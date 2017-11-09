@@ -59,7 +59,7 @@ class NewGroupViewController: UIViewController {
 //							self.createBtn.isHidden = false
 						self.dismiss(animated: true, completion: nil)
 					} else {
-						print("group could not be creatde")
+						print("group could not be created")
 					}
 				})
 			})
@@ -107,7 +107,7 @@ extension NewGroupViewController: UITableViewDelegate, UITableViewDataSource {
 			chosenUserArray = chosenUserArray.filter({ $0 != cell.userNameLbl.text! })
 			if chosenUserArray.count >= 1 {
 				groupMemberLbl.text = chosenUserArray.joined(separator: ", ")
-				print(String(describing: chosenUserArray))
+				//print(String(describing: chosenUserArray))
 			} else {
 				groupMemberLbl.text = "add users to group"
 				createBtn.isHidden = true

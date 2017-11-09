@@ -96,5 +96,33 @@ extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 		return cell
 	}
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		// TODO: refactor into function that checks current user with message sender
+		let currentUser = Auth.auth().currentUser!
+		if (currentUser.uid == groupMessages[indexPath.row].senderId) {
+			return true
+		}
+		return false
+	}
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		
+		if (editingStyle == UITableViewCellEditingStyle.delete) {
+			// handle delete (by removing the data from your array and updating the tableview
+			
+			
+			let deletedPost = groupMessages[indexPath.row].postId
+			let senderId = groupMessages[indexPath.row].senderId
+			//print(deletedPost)
+			
+			DataService.instance.deletePost(forUID: deletedPost, forSenderId: senderId, sendComplete: { (true) in
+				print("deleted" + deletedPost)
+				
+			})
+			self.groupMessages.remove(at: indexPath.row)
+			self.tableView.deleteRows(at: [indexPath], with: .bottom)
+			self.tableView.reloadData()
+		}
+		
+	}
 	
 }

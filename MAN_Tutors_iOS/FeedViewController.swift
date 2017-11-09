@@ -86,14 +86,13 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 		if (editingStyle == UITableViewCellEditingStyle.delete) {
 			// handle delete (by removing the data from your array and updating the tableview
 			
-			//TODO: delete tableview cell from database by getting post id and delete child
-			//TODO: Deleting from Firebase and reloading the table should be enough!
+		
 			let deletedPost = postArray[indexPath.row].postId
 			let senderId = postArray[indexPath.row].senderId
-			print(deletedPost)
+			
 			
 			DataService.instance.deletePost(forUID: deletedPost, forSenderId: senderId, sendComplete: { (true) in
-				print("deleted")
+				print("deleted" + deletedPost)
 				
 			})
 			self.postArray.remove(at: indexPath.row)
