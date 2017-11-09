@@ -51,8 +51,11 @@ class DataService {
 		}
 	}
     
-    func deletePost(forUID uid: String,sendComplete:@escaping(_ status: Bool) -> ()) {
-        FEED_REF.child(uid).removeValue()
+	func deletePost(forUID uid: String, forSenderId senderId: String, sendComplete:@escaping(_ status: Bool) -> ()) {
+		if (senderId == Auth.auth().currentUser!.uid) {
+		FEED_REF.child(uid).removeValue()
+		}
+		
     }
 	
 	func getUsername(forUID uid: String, handler: @escaping (_ username: String) -> ()) {
@@ -75,6 +78,8 @@ class DataService {
 			for post in postFeedSnapshot {
 				let content = post.childSnapshot(forPath: "content").value as! String
 				let senderId = post.childSnapshot(forPath: "senderId").value as! String
+				/// PostId is necessary for effective post identification/deletion, but not vital to the program
+				let postId = post.childSnapshot(forPath: "uid").value as! String
                 let post = Post(content: content, senderId: senderId)
 				postArray.append(post)
 			}
