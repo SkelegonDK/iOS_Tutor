@@ -40,12 +40,13 @@ class DataService {
 		USERS_REF.child(uid).updateChildValues(userData)
 	}
 	
-    func createPost(withMessage message: String, forUID uid:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
+	func createPost(withMessage message: String, forUID uid:String, withGroupKey groupKey: String?,withLink postLink: String, sendComplete: @escaping (_ status: Bool)->()) {
+//    func createPost(withMessage message: String, forUID uid:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
 //    func createPost(withMessage message: String, forUID uid:String,forPostId postId:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
 		if groupKey != nil {
 			
 		} else {
-            FEED_REF.childByAutoId().updateChildValues(["content":message, "senderId": uid])
+			FEED_REF.childByAutoId().updateChildValues(["content":message, "senderId": uid, "link": postLink])
 //            FEED_REF.childByAutoId().updateChildValues(["content":message, "senderId": uid, "postId":postId])
 			sendComplete(true)
 		}
@@ -78,9 +79,10 @@ class DataService {
 			for post in postFeedSnapshot {
 				let content = post.childSnapshot(forPath: "content").value as! String
 				let senderId = post.childSnapshot(forPath: "senderId").value as! String
+				let postLink = post.childSnapshot(forPath: "link").value as! String
 				/// PostId is necessary for effective post identification/deletion, but not vital to the program
 				let postId = post.key
-				let post = Post(content: content, senderId: senderId, postId:postId)
+				let post = Post(content: content, senderId: senderId, postId:postId, postLink: postLink)
 				postArray.append(post)
 			}
 			
@@ -147,7 +149,8 @@ class DataService {
 				let content = groupMessage.childSnapshot(forPath: "messages").value as! String
 				let senderId = groupMessage.childSnapshot(forPath: "senderId").value as! String
 				let postId = groupMessage.key
-				let message = Post(content: content, senderId: senderId,postId: postId)
+				let postLink = groupMessage.childSnapshot(forPath: "link").value as! String
+				let message = Post(content: content, senderId: senderId,postId: postId,postLink: postLink)
 				messageArray.append(message)
 			}
 			handler(messageArray)

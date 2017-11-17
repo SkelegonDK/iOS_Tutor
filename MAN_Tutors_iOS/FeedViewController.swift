@@ -12,7 +12,9 @@ import Firebase
 	class FeedViewController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
-	
+		
+		
+		
 	var postArray = [Post]()
 	
 	override func viewDidLoad() {
@@ -20,6 +22,7 @@ import Firebase
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
+
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -36,7 +39,18 @@ import Firebase
 		}
 		
 	}
+		//TODO: check if link is valid
+		//TODO: take post link and add to link Btn
+		@IBAction func LinkBtnAction(_ sender: Any) {
+			if let url = NSURL(string: "http://www.google.com"){
+				UIApplication.shared.open(url as URL, options: [:], completionHandler: { (nil) in
+					
+				})
+			}
+			
+		}
 }
+
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 	

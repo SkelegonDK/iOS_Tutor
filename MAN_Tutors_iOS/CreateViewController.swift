@@ -15,6 +15,7 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet weak var userEmail: UILabel!
 	@IBOutlet weak var textView: UITextView!
 	@IBOutlet weak var SendBtn: UIButton!
+	@IBOutlet weak var LinkTextField: UITextField!
 	
 	
 	let darkYellow :UIColor = UIColor(red: 0.553, green: 0.522, blue: 0.043, alpha: 1)
@@ -25,6 +26,7 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 		
 		textView.text = textViewPlaceholder
 		textView.textColor = darkYellow
+	
 		
     }
 	
@@ -34,22 +36,25 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 	}
 	
 	// is Necessary?
+	// TODO: functions deletes text when tapping on linkTextField
 	func textViewDidEndEditing(_ textView: UITextView) {
-		textView.text = textViewPlaceholder
+//		textView.text = textViewPlaceholder
 		textView.textColor = darkYellow
 	}
 	
 	func textViewDidBeginEditing(_ textView: UITextView) {
-		textView.text = ""
+//		textView.text = ""
 		textView.textColor = UIColor.black
 	}
 	
 	
 	@IBAction func SendBtnAction(_ sender: Any) {
+		
 		if textView.text != nil && textView.text != textViewPlaceholder  {
 			SendBtn.isEnabled = false
 			
-			DataService.instance.createPost(withMessage: textView.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil, sendComplete:
+			// TODO: fix create function PostLink reference
+			DataService.instance.createPost(withMessage: textView.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil, withLink: LinkTextField.text!   , sendComplete:
 				{(isComplete) in if isComplete {
 					
 					self.SendBtn.isEnabled = true
@@ -74,5 +79,4 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 		textView.resignFirstResponder()
 	}
 }
-
 
