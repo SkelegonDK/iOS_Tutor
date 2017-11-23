@@ -40,6 +40,9 @@ class DataService {
 		USERS_REF.child(uid).updateChildValues(userData)
 	}
 	
+	
+	// TODO: add link text field for group messages.
+	// FIXME: app crashes when group message is sent because link text is nil.
 	func createPost(withMessage message: String, forUID uid:String, withGroupKey groupKey: String?,withLink postLink: String, sendComplete: @escaping (_ status: Bool)->()) {
 //    func createPost(withMessage message: String, forUID uid:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
 //    func createPost(withMessage message: String, forUID uid:String,forPostId postId:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
@@ -58,7 +61,7 @@ class DataService {
 		}
 		
     }
-	
+	/// Function gets user id from DB reference and returns user email adress.
 	func getUsername(forUID uid: String, handler: @escaping (_ username: String) -> ()) {
 		
 		USERS_REF.observeSingleEvent(of: .value, with: { (userSnapshot) in
@@ -70,7 +73,7 @@ class DataService {
 			}
 		})
 	}
-	
+	/// Function gets post data from DB reference. Then a post array is created to hold all the posts. Then the data is assigned to the Post data model. Then the handler returs a post array that the app can use.
 	func getFeedData(handler: @escaping(_ posts:[Post]) -> ()) {
 		var postArray = [Post]()
 		FEED_REF.observeSingleEvent(of: .value, with: { (postFeedSnapshot) in
@@ -159,12 +162,12 @@ class DataService {
 	}
 	
 	
-	func uploadPost(withPost post: String, forUID uid: String, withgroupKey groupKey: String?,sendComplete: @escaping (_ status: Bool) -> ()) {
+	func uploadPost(withPost post: String, forUID uid: String, withgroupKey groupKey: String?,withLink postLink: String?, sendComplete: @escaping (_ status: Bool) -> ()) {
 		if groupKey != nil {
-			GROUPS_REF.child(groupKey!).child("messages").childByAutoId().updateChildValues(["messages": post,"senderId":uid])
+			GROUPS_REF.child(groupKey!).child("messages").childByAutoId().updateChildValues(["messages": post,"senderId":uid,"link":postLink ?? ""])
 			sendComplete(true)
 		} else {
-			FEED_REF.childByAutoId().updateChildValues(["content": post,"senderId":uid])
+			FEED_REF.childByAutoId().updateChildValues(["content": post,"senderId":uid,"link":postLink ?? ""])
 			sendComplete(true)
 		}
 	}

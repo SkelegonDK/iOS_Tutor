@@ -52,21 +52,26 @@ class GroupFeedViewController: UIViewController {
 		
 	}
 	
-	@IBAction func sendBtnWasPressed(_ sender: Any) {
-		if postTextField.text != "" {
-			postTextField.isEnabled = false
-			sendBtn.isEnabled = false
-			
-			DataService.instance.uploadPost(withPost: postTextField.text!, forUID: Auth.auth().currentUser!.uid , withgroupKey: group?.key, sendComplete: { (complete) in
-				if complete {
-					self.postTextField.text = ""
-					self.postTextField.isEnabled = true
-					self.sendBtn.isEnabled = true
-					
-				}
-			})
+//	@IBAction func sendBtnWasPressed(_ sender: Any) {
+//		if postTextField.text != "" {
+//			postTextField.isEnabled = false
+//			sendBtn.isEnabled = false
+//			//FIXME: missing withLink argument and missing texfield in group message
+//			DataService.instance.uploadPost(withPost: postTextField.text!, forUID: Auth.auth().currentUser!.uid , withgroupKey: group?.key, sendComplete: { (complete) in
+//				if complete {
+//					self.postTextField.text = ""
+//					self.postTextField.isEnabled = true
+//					self.sendBtn.isEnabled = true
+//
+//				}
+//			})
+//		}
+//	}
+
+		@IBAction func sendBtnWasPressed(_ sender: Any) {
+			performSegue(withIdentifier: "GroupViewController", sender: self)
 		}
-	}
+	
 	
 	@IBAction func backBtnWasPressed(_ sender: Any) {
 		dismiss(animated: true, completion: nil)

@@ -20,7 +20,8 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 	
 	let darkYellow :UIColor = UIColor(red: 0.553, green: 0.522, blue: 0.043, alpha: 1)
 	let textViewPlaceholder: String = "Tap to write or swipe down keyboard\nPlease write a short description of your issue..."
- 	override func viewDidLoad() {
+	
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.textView.delegate = self
 		

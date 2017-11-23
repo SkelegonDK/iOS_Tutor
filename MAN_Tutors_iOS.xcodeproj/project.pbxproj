@@ -10,6 +10,7 @@
 		0547D95692BC558C363D06AA /* Pods_MAN_Tutors_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474B715E78D0C1848F77AF60 /* Pods_MAN_Tutors_iOS.framework */; };
 		8D0802911F5C02B800CC63C9 /* postClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0802901F5C02B800CC63C9 /* postClass.swift */; };
 		8D0802931F5C0E5E00CC63C9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0802921F5C0E5E00CC63C9 /* PostTableViewCell.swift */; };
+		8D249EAD1FC701A200EDC435 /* GroupPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D249EAC1FC701A200EDC435 /* GroupPostViewController.swift */; };
 		8D32E5A91F5C661200D22979 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32E5A81F5C661200D22979 /* NewGroupViewController.swift */; };
 		8D32E5AB1F5C69CC00D22979 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32E5AA1F5C69CC00D22979 /* UserTableViewCell.swift */; };
 		8D4A743B1F5ADA34008A5C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A743A1F5ADA34008A5C20 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		5541D9017CF12A90316059D6 /* Pods-MAN_Tutors_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAN_Tutors_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAN_Tutors_iOS/Pods-MAN_Tutors_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		8D0802901F5C02B800CC63C9 /* postClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postClass.swift; sourceTree = "<group>"; };
 		8D0802921F5C0E5E00CC63C9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		8D249EAC1FC701A200EDC435 /* GroupPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPostViewController.swift; sourceTree = "<group>"; };
 		8D32E5A81F5C661200D22979 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
 		8D32E5AA1F5C69CC00D22979 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		8D4A74371F5ADA34008A5C20 /* MAN_Tutors_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAN_Tutors_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 				8D6C66461F5B44EA003A8BF0 /* UserViewController.swift */,
 				8D6C664A1F5B522F003A8BF0 /* CreateViewController.swift */,
 				8DBBF1BC1F65649D00535C88 /* GroupFeedViewController.swift */,
+				8D249EAC1FC701A200EDC435 /* GroupPostViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				8D6C66491F5B5011003A8BF0 /* PostTextView.swift in Sources */,
 				8D32E5A91F5C661200D22979 /* NewGroupViewController.swift in Sources */,
 				8DBBF1BF1F6574A000535C88 /* GroupFeedCell.swift in Sources */,
+				8D249EAD1FC701A200EDC435 /* GroupPostViewController.swift in Sources */,
 				8D6C664B1F5B522F003A8BF0 /* CreateViewController.swift in Sources */,
 				8DAF624A1F5AEF6B0021338C /* CutomTextfield.swift in Sources */,
 				8D4A743D1F5ADA34008A5C20 /* FeedViewController.swift in Sources */,
