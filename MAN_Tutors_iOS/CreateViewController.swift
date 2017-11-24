@@ -54,8 +54,22 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 		if textView.text != nil && textView.text != textViewPlaceholder  {
 			SendBtn.isEnabled = false
 			
+            
+            // If post Link is not valid, upload empty string
+            let postLink = self.LinkTextField.text
+            let url : String
+            if DataService.instance.verifyUrl(urlString: postLink){
+                url = "http://" + postLink!
+            } else {
+                url = ""
+            }
+            
 			// TODO: fix create function PostLink reference
-			DataService.instance.createPost(withMessage: textView.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil, withLink: LinkTextField.text!   , sendComplete:
+			DataService.instance.createPost(
+                withMessage: textView.text,
+                forUID: (Auth.auth().currentUser?.uid)!,
+                withGroupKey: nil,
+                withLink: url, sendComplete:
 				{(isComplete) in if isComplete {
 					
 					self.SendBtn.isEnabled = true

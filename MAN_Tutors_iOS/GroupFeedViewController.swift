@@ -15,9 +15,7 @@ class GroupFeedViewController: UIViewController {
 	@IBOutlet weak var sendBtn: UIButton!
 	@IBOutlet weak var groupTitleLbl: UILabel!
 	@IBOutlet weak var membersLbl: UILabel!
-	@IBOutlet weak var postTextField: UITextField!
-	
-	
+    
 	var group: Group?
 	var groupMessages = [Post]()
 	
@@ -30,6 +28,11 @@ class GroupFeedViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
+        // enable table row cells to adjust cell height automatically if necessary
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
+        
+
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +46,7 @@ class GroupFeedViewController: UIViewController {
 		
 		DataService.instance.GROUPS_REF.observe(.value, with: { (snapshot) in
 			DataService.instance.getAllMessagesFor(group: self.group!) { (returnedGroupMessages) in
-				self.groupMessages = returnedGroupMessages.reversed()
+                self.groupMessages = returnedGroupMessages.reversed()
 				self.tableView.reloadData()
 			}
 		})
@@ -69,7 +72,7 @@ class GroupFeedViewController: UIViewController {
 //	}
 
 		@IBAction func sendBtnWasPressed(_ sender: Any) {
-			performSegue(withIdentifier: "GroupViewController", sender: self)
+            
 		}
 	
 	
@@ -79,10 +82,11 @@ class GroupFeedViewController: UIViewController {
 	
 }
 extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
-	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-	{
-		return 150
-	}
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+//    {
+//        return 150
+//    }
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
@@ -93,14 +97,33 @@ extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "groupFeedCell", for: indexPath) as? GroupFeedCell else { return UITableViewCell() }
 		let message = groupMessages[indexPath.row]
 		
+        
+        // Verify is url is valid, if valid true show LinkLbl
+        if message.postLink == "" {
+         cell.LinkLbl.isHidden = true
+        } else {
+            cell.LinkLbl.isHidden = false
+        }
+        
 		DataService.instance.getUsername(forUID: message.senderId) { (email) in
 			cell.configureCell(profileImage: #imageLiteral(resourceName: "issue-29"), email: email, content: message.content)
 		}
 		return cell
 	}
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cellLink = groupMessages[indexPath.row].postLink
+        // TODO: If URL is empty, if not disable interaction
+        let url =  URL(string: cellLink )!
+        
+        UIApplication.shared.open(url, options: [:])
+        
+    }
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 		// TODO: refactor into function that checks current user with message sender
 		let currentUser = Auth.auth().currentUser!
@@ -109,6 +132,7 @@ extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 		return false
 	}
+    
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		
 		if (editingStyle == UITableViewCellEditingStyle.delete) {
@@ -129,5 +153,10 @@ extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 		
 	}
+    //TODO: if URL is not valid, delete from database
+    //TODO: move function to Dataservice object so it can be accessed globally
+    /// Checks if a URL string is a valid URL and returns a boolean value
 	
 }
+
+

@@ -161,7 +161,8 @@ class DataService {
 			
 	}
 	
-	
+    //FIX: GROUP ID IS NOT PASSED IN groupPostFeed. Post from groups end up in issue feed
+    /// Takes values from Post model. if Post model has group key, then upload to group child reference. if not, upload to child feed reference.
 	func uploadPost(withPost post: String, forUID uid: String, withgroupKey groupKey: String?,withLink postLink: String?, sendComplete: @escaping (_ status: Bool) -> ()) {
 		if groupKey != nil {
 			GROUPS_REF.child(groupKey!).child("messages").childByAutoId().updateChildValues(["messages": post,"senderId":uid,"link":postLink ?? ""])
@@ -191,6 +192,15 @@ class DataService {
 			handler(groupsArray)
 		})
 	}
+    
+    func verifyUrl(urlString: String?) -> Bool {
+        guard let urlString = urlString,
+            let url = URL(string: urlString) else {
+                return false
+        }
+        
+        return UIApplication.shared.canOpenURL(url)
+    }
 	
 
 

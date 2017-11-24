@@ -28,8 +28,6 @@ import Firebase
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		
-		
 		DataService.instance.getFeedData { (returnedPostsArray) in
 		
 //			self.postArray = returnedPostsArray.reversed()
@@ -39,16 +37,7 @@ import Firebase
 		}
 		
 	}
-		//TODO: check if link is valid
-		//TODO: take post link and add to link Btn
-		@IBAction func LinkBtnAction(_ sender: Any) {
-			if let url = NSURL(string: "http://www.google.com"){
-				UIApplication.shared.open(url as URL, options: [:], completionHandler: { (nil) in
-					
-				})
-			}
-			
-		}
+		
 }
 
 
@@ -68,7 +57,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
+        
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostTableViewCell else { return UITableViewCell() }
 		
 		let image = UIImage(named: "issue-29")
@@ -76,15 +65,35 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 //		let number = "You are number " + String(postArray.count - indexPath.row) + " in line"
 		let number = "You are number " + String(indexPath.row + 1) + " in line"
 		
-		
+    
 //			cell.configureCell(profileImage: image!, email: post.senderId, content: post.content)
 		
 			DataService.instance.getUsername(forUID: post.senderId) { (returnedUserName) in
 			cell.configureCell(profileImage: image!, email: returnedUserName, content: post.content, number: number )
 		}
+        // Verify is url is valid, if valid true show LinkLbl
+        if DataService.instance.verifyUrl(urlString: postArray[indexPath.row].postLink) {
+            cell.LinkLbl.isHidden = false
+        } else {
+            cell.LinkLbl.isHidden = true
+        }
 		
 		return cell
 	}
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cellLink = postArray[indexPath.row].postLink
+        // If URL is valid open url, if not disable interaction
+        if DataService.instance.verifyUrl(urlString: cellLink) == true {
+            //TODO: add http:// to url paths in database
+            let url = URL(string: cellLink )!
+            UIApplication.shared.open(url, options: [:])
+        } else {
+            tableView.isUserInteractionEnabled = false
+        }
+        
+    }
 	
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 		// TODO: refactor into function that checks current user with message sender
@@ -115,5 +124,4 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 		
 	}
-	
 }

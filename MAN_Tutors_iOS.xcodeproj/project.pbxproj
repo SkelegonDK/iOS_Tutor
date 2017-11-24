@@ -138,11 +138,11 @@
 				8D32E5A81F5C661200D22979 /* NewGroupViewController.swift */,
 				8DAF62451F5AEED00021338C /* AuthViewController.swift */,
 				8D4A743C1F5ADA34008A5C20 /* FeedViewController.swift */,
-				8D4A743E1F5ADA34008A5C20 /* GroupViewController.swift */,
 				8DAF62471F5AEF2A0021338C /* LoginViewController.swift */,
 				8DAF62491F5AEF6B0021338C /* CutomTextfield.swift */,
 				8D6C66461F5B44EA003A8BF0 /* UserViewController.swift */,
 				8D6C664A1F5B522F003A8BF0 /* CreateViewController.swift */,
+				8D4A743E1F5ADA34008A5C20 /* GroupViewController.swift */,
 				8DBBF1BC1F65649D00535C88 /* GroupFeedViewController.swift */,
 				8D249EAC1FC701A200EDC435 /* GroupPostViewController.swift */,
 			);
