@@ -72,7 +72,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 			cell.configureCell(profileImage: image!, email: returnedUserName, content: post.content, number: number )
 		}
         // Verify is url is valid, if valid true show LinkLbl
-        if DataService.instance.verifyUrl(urlString: postArray[indexPath.row].postLink) {
+		if DataService.instance.verifyUrl(urlString: postArray[indexPath.row].postLink) {
             cell.LinkLbl.isHidden = false
         } else {
             cell.LinkLbl.isHidden = true
@@ -83,15 +83,19 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cellLink = postArray[indexPath.row].postLink
+		let cellLink = postArray[indexPath.row].postLink
+		
         // If URL is valid open url, if not disable interaction
-        if DataService.instance.verifyUrl(urlString: cellLink) == true {
+		if DataService.instance.verifyUrl(urlString: cellLink) == true {
             //TODO: add http:// to url paths in database
-            let url = URL(string: cellLink )!
+			let url = URL(string: cellLink )!
+			
             UIApplication.shared.open(url, options: [:])
         } else {
+			
             tableView.isUserInteractionEnabled = false
         }
+		
         
     }
 	

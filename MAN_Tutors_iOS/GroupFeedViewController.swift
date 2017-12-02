@@ -108,9 +108,9 @@ extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.LinkLbl.isHidden = false
         }
-        
+		//TODO:
 		DataService.instance.getUsername(forUID: message.senderId) { (email) in
-			cell.configureCell(profileImage: #imageLiteral(resourceName: "issue-29"), email: email, content: message.content)
+			cell.configureCell(profileImage: #imageLiteral(resourceName: "second"), email: email, content: message.content)
 		}
 		return cell
 	}

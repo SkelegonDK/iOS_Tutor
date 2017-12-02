@@ -6,6 +6,9 @@
 //  Copyright © 2017 Manuel Thomsen. All rights reserved.
 //
 
+//TODO:Link label for tableViewCell is not displaying correctly.
+//TODO: TableCells must be disabled if the URL is not valid
+
 import UIKit
 import Firebase
 
@@ -21,9 +24,9 @@ class GroupPostViewController: UIViewController {
     var group: Group?
     var groupMessages = [Post]()
     
-    func initData(forGroup group: Group) {
-        self.group = group
-    }
+//    func initData(forGroup group: Group) {
+//        self.group = group
+//    }
     
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,26 +44,29 @@ class GroupPostViewController: UIViewController {
             let postLink = self.LinkTextfield.text
             let url : String
             if DataService.instance.verifyUrl(urlString: postLink){
+                
                 url = "http://" + postLink!
             } else {
                  url = ""
             }
-                        DataService.instance.uploadPost(
-                            withPost: postTextfield.text!,
-                            forUID: Auth.auth().currentUser!.uid ,
-                            withgroupKey: group?.key,
-                            withLink: url,
-                            sendComplete: { (complete) in
-                            if complete {
-                                self.postTextfield.text = ""
-                                self.postTextfield.isEnabled = true
-                                self.SendBtn.isEnabled = false
-                                self.dismiss(animated: true, completion: nil)
+                DataService.instance.uploadPost(
+                    withPost: postTextfield.text!,
+                    forUID: Auth.auth().currentUser!.uid,
+                    withgroupKey: group?.key,
+                    withLink: url,
+                    sendComplete: { (complete) in
+                    if complete {
+                        self.postTextfield.text = ""
+                        self.postTextfield.isEnabled = true
+                        self.SendBtn.isEnabled = false
+                        self.dismiss(animated: true, completion: nil)
                             }
                         })
         } else {
             SendBtn.isEnabled = false
         }
+        
+        
     }
 	
 	

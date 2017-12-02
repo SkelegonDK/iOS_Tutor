@@ -58,7 +58,7 @@ class CreateViewController: UIViewController, UITextViewDelegate {
             // If post Link is not valid, upload empty string
             let postLink = self.LinkTextField.text
             let url : String
-            if DataService.instance.verifyUrl(urlString: postLink){
+			if DataService.instance.verifyUrl(urlString: "http://" + postLink!){
                 url = "http://" + postLink!
             } else {
                 url = ""

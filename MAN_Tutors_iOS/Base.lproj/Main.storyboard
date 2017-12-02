@@ -164,7 +164,7 @@
                             <constraint firstItem="Ara-xl-wIk" firstAttribute="top" secondItem="i5I-RR-fJg" secondAttribute="bottom" id="txX-td-nTN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="&lt;/Issues&gt;" image="issue-29" largeContentSizeImage="issue" selectedImage="issue-29" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="&lt;/Issues&gt;" image="issue-29" selectedImage="issue-29" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tableView" destination="Ara-xl-wIk" id="lzr-56-6J0"/>
                     </connections>
@@ -188,13 +188,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEs-tP-dLA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiE-Zm-Wxb">
-                                        <rect key="frame" x="15" y="35" width="100" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiE-Zm-Wxb">
+                                        <rect key="frame" x="15" y="35" width="57" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ML4-90-dQU"/>
-                                            <constraint firstAttribute="width" constant="100" id="XnX-gZ-mFM"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="f8X-Mv-mOe"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="lDd-ud-lrD"/>
                                         </constraints>
                                         <state key="normal" title="&lt;back/&gt;">
                                             <color key="titleColor" red="0.55300000000000005" green="0.52200000000000002" blue="0.042999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -232,8 +229,8 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Cl8-OG-9gC"/>
                                     <constraint firstItem="zWs-Zx-eF5" firstAttribute="centerY" secondItem="pEs-tP-dLA" secondAttribute="centerY" id="E4p-z8-54G"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="er2-dX-ZVN"/>
-                                    <constraint firstItem="IiE-Zm-Wxb" firstAttribute="leading" secondItem="pEs-tP-dLA" secondAttribute="leading" constant="15" id="ldS-9u-cjJ"/>
                                     <constraint firstItem="fFa-Xv-aKH" firstAttribute="centerY" secondItem="pEs-tP-dLA" secondAttribute="centerY" id="n2u-Vi-PPu"/>
+                                    <constraint firstItem="IiE-Zm-Wxb" firstAttribute="centerY" secondItem="pEs-tP-dLA" secondAttribute="centerY" id="wcH-cA-cxA"/>
                                     <constraint firstItem="zWs-Zx-eF5" firstAttribute="centerX" secondItem="pEs-tP-dLA" secondAttribute="centerX" id="xUD-kz-oeT"/>
                                 </constraints>
                             </view>
@@ -907,7 +904,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="issue-60" translatesAutoresizingMaskIntoConstraints="NO" id="sA3-MC-IIV">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="issue-29" translatesAutoresizingMaskIntoConstraints="NO" id="sA3-MC-IIV">
                                                     <rect key="frame" x="15" y="19" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Nbb-aI-FfI"/>
@@ -1359,13 +1356,12 @@
     </scenes>
     <resources>
         <image name="group-29" width="29" height="29"/>
-        <image name="issue" width="100" height="114"/>
         <image name="issue-29" width="29" height="29"/>
         <image name="issue-60" width="60" height="60"/>
         <image name="user-29" width="29" height="29"/>
         <image name="user-60" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NnW-dd-dqj"/>
+        <segue reference="9vg-Ft-YQu"/>
     </inferredMetricsTieBreakers>
 </document>

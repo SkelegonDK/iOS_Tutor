@@ -47,7 +47,7 @@ class DataService {
 //    func createPost(withMessage message: String, forUID uid:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
 //    func createPost(withMessage message: String, forUID uid:String,forPostId postId:String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool)->()) {
 		if groupKey != nil {
-			
+            
 		} else {
 			FEED_REF.childByAutoId().updateChildValues(["content":message, "senderId": uid, "link": postLink])
 //            FEED_REF.childByAutoId().updateChildValues(["content":message, "senderId": uid, "postId":postId])
