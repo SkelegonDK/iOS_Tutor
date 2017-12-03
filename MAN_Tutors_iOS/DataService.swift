@@ -58,9 +58,13 @@ class DataService {
 	func deletePost(forUID uid: String, forSenderId senderId: String, sendComplete:@escaping(_ status: Bool) -> ()) {
 		if (senderId == Auth.auth().currentUser!.uid) {
 		FEED_REF.child(uid).removeValue()
+			
 		}
 		
     }
+	
+	
+	
 	/// Function gets user id from DB reference and returns user email adress.
 	func getUsername(forUID uid: String, handler: @escaping (_ username: String) -> ()) {
 		
@@ -77,6 +81,7 @@ class DataService {
 	func getFeedData(handler: @escaping(_ posts:[Post]) -> ()) {
 		var postArray = [Post]()
 		FEED_REF.observeSingleEvent(of: .value, with: { (postFeedSnapshot) in
+			
 			guard let postFeedSnapshot = postFeedSnapshot.children.allObjects as? [DataSnapshot] else { return }
 			
 			for post in postFeedSnapshot {
@@ -165,8 +170,8 @@ class DataService {
     /// Takes values from Post model. if Post model has group key, then upload to group child reference. if not, upload to child feed reference.
 	func uploadPost(withPost post: String, forUID uid: String, withgroupKey groupKey: String?,withLink postLink: String?, sendComplete: @escaping (_ status: Bool) -> ()) {
 		if groupKey != nil {
-			GROUPS_REF.child(groupKey!).child("messages").childByAutoId().updateChildValues(["messages": post,"senderId":uid,"link":postLink ?? ""])
-			sendComplete(true)
+//			GROUPS_REF.child(groupKey!).child("messages").childByAutoId().updateChildValues(["messages": post,"senderId":uid,"link":postLink ?? ""])
+//			sendComplete(true)
 		} else {
 			FEED_REF.childByAutoId().updateChildValues(["content": post,"senderId":uid,"link":postLink ?? ""])
 			sendComplete(true)

@@ -13,8 +13,6 @@ import Firebase
 
 	@IBOutlet weak var tableView: UITableView!
 		
-		
-		
 	var postArray = [Post]()
 	
 	override func viewDidLoad() {
@@ -22,26 +20,32 @@ import Firebase
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
-
+		
 	}
+		
+	
 
+	
+		
 	override func viewDidAppear(_ animated: Bool) {
+		
 		super.viewDidAppear(animated)
-		
-		DataService.instance.getFeedData { (returnedPostsArray) in
-		
-//			self.postArray = returnedPostsArray.reversed()
-			self.postArray = returnedPostsArray
-			self.tableView.reloadData()
+		DataService.instance.FEED_REF.observe(.value) { (DataSnapshot) in
 			
+			DataService.instance.getFeedData { (returnedPostsArray) in
+				self.postArray = returnedPostsArray
+				self.tableView.reloadData()
+				
+			}
 		}
-		
 	}
 		
 }
 
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
+	
+	
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
@@ -62,16 +66,13 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		let image = UIImage(named: "issue-29")
 		let post = postArray[indexPath.row]
-//		let number = "You are number " + String(postArray.count - indexPath.row) + " in line"
+
 		let number = "You are number " + String(indexPath.row + 1) + " in line"
-		
-    
-//			cell.configureCell(profileImage: image!, email: post.senderId, content: post.content)
 		
 			DataService.instance.getUsername(forUID: post.senderId) { (returnedUserName) in
 			cell.configureCell(profileImage: image!, email: returnedUserName, content: post.content, number: number )
 		}
-        // Verify is url is valid, if valid true show LinkLbl
+		
 		if DataService.instance.verifyUrl(urlString: postArray[indexPath.row].postLink) {
             cell.LinkLbl.isHidden = false
         } else {

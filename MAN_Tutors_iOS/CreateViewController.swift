@@ -64,7 +64,7 @@ class CreateViewController: UIViewController, UITextViewDelegate {
                 url = ""
             }
             
-			// TODO: fix create function PostLink reference
+			
 			DataService.instance.createPost(
                 withMessage: textView.text,
                 forUID: (Auth.auth().currentUser?.uid)!,
@@ -90,6 +90,7 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 	@IBAction func BackBtnAction(_ sender: Any) {
 		dismiss(animated: true, completion: nil)
 	}
+	//TODO: Remove this
 	@IBAction func SwipeDownKeyboardGesture(_ sender: Any) {
 		textView.resignFirstResponder()
 	}
