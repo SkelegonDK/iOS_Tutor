@@ -23,6 +23,7 @@ class AuthViewController: UIViewController {
 			dismiss(animated: true, completion: nil)
 		}
 	}
+	
     /// Btn presents login view
 	@IBAction func EmailBtnAction(_ sender: Any) {
 		

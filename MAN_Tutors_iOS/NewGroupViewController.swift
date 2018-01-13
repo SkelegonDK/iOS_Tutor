@@ -49,22 +49,22 @@ class NewGroupViewController: UIViewController {
 	}
 
 	
-	@IBAction func CreateBtnAction(_ sender: Any) {
-		if SubjecField.text != "" && DescriptionField.text != "" {
-			DataService.instance.getIds(forUsernames: chosenUserArray, handler: { (idArray) in
-				var userIDs = idArray
-				userIDs.append((Auth.auth().currentUser?.uid)!)
-				DataService.instance.createGroup(withTitle: self.SubjecField.text!, andDescription: self.DescriptionField.text!, forUserIds: userIDs, handler: { (groupCreated) in
-					if groupCreated {
-//							self.createBtn.isHidden = false
-						self.dismiss(animated: true, completion: nil)
-					} else {
-						print("group could not be created")
-					}
-				})
-			})
-		}
-	}
+//	@IBAction func CreateBtnAction(_ sender: Any) {
+//		if SubjecField.text != "" && DescriptionField.text != "" {
+//			DataService.instance.getIds(forUsernames: chosenUserArray, handler: { (idArray) in
+//				var userIDs = idArray
+//				userIDs.append((Auth.auth().currentUser?.uid)!)
+//				DataService.instance.createGroup(withTitle: self.SubjecField.text!, andDescription: self.DescriptionField.text!, forUserIds: userIDs, handler: { (groupCreated) in
+//					if groupCreated {
+////							self.createBtn.isHidden = false
+//						self.dismiss(animated: true, completion: nil)
+//					} else {
+//						print("group could not be created")
+//					}
+//				})
+//			})
+//		}
+//	}
 	
 	@IBAction func BackBtnAction(_ sender: Any) {
 		

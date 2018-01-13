@@ -6,8 +6,8 @@
 //  Copyright © 2017 Manuel Thomsen. All rights reserved.
 //
 
-//TODO:Link label for tableViewCell is not displaying correctly.
-//TODO: TableCells must be disabled if the URL is not valid
+
+
 
 import UIKit
 import Firebase
@@ -34,12 +34,13 @@ class GroupPostViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 	
+	/// - ToDo: check for valid url before uploading to DB to avoid multiple checks
 	@IBAction func SendBtnAction(_ sender: Any) {
         
         if postTextfield.text != "" {
                         SendBtn.isEnabled = true
                         //FIXME: missing withLink argument and missing texfield in group message
-                        // TODO: check for valid url before uploading to DB to avoid multiple checks
+			
             
             let postLink = self.LinkTextfield.text
             let url : String

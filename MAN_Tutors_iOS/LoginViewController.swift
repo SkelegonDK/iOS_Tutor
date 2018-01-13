@@ -13,14 +13,12 @@ class LoginViewController: UIViewController {
 	@IBOutlet weak var emailInput: UITextField!
 	@IBOutlet weak var passwordInput: UITextField!
 	
-	
-	
-	
 	override func viewDidLoad() {
 		
 		super.viewDidLoad()
 		
     }
+	
 	@IBAction func EnterBtnAction(_ sender: Any) {
 		if (emailInput.text != nil) && (passwordInput.text != nil) {
 			AuthService.instance.LoginUser(withEmail: emailInput.text!, andPassword: passwordInput.text!, loginAccepted: {(success, loginError) in
@@ -29,7 +27,8 @@ class LoginViewController: UIViewController {
 				} else {
 					print(String(describing: loginError?.localizedDescription))
 				}
-				AuthService.instance.registerUser(withEmail: self.emailInput.text!, andPassword: self.passwordInput.text! , userCreated: { (success, regError) in if success {
+				AuthService.instance.registerUser(withEmail: self.emailInput.text!, andPassword: self.passwordInput.text! , userCreated: { (success, regError) in
+					if success {
 					AuthService.instance.LoginUser(withEmail: self.emailInput.text!, andPassword: self.passwordInput.text!, loginAccepted: { (success, nil) in
 						self.dismiss(animated: true, completion: nil)
 						//print("registered user")

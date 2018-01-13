@@ -23,13 +23,13 @@ class GroupViewController: UIViewController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		DataService.instance.GROUPS_REF.observe(.value, with: { (snapshot) in
-			DataService.instance.getAllGroups { (returnedGroupArray) in
-				self.groupsArray = returnedGroupArray.reversed()
-				self.groupsTableView.reloadData()
-			}
-			
-		})
+//		DataService.instance.GROUPS_REF.observe(.value, with: { (snapshot) in
+//			DataService.instance.getAllGroups { (returnedGroupArray) in
+//				self.groupsArray = returnedGroupArray.reversed()
+//				self.groupsTableView.reloadData()
+//			}
+//			
+//		})
 		
 	}
 	@IBAction func backBtnAction(_ sender: Any) {

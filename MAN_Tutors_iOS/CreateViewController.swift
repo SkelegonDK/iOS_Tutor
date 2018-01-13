@@ -28,7 +28,6 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 		textView.text = textViewPlaceholder
 		textView.textColor = darkYellow
 	
-		
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -36,15 +35,15 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 		self.userEmail.text = Auth.auth().currentUser?.email
 	}
 	
-	// is Necessary?
-	// TODO: functions deletes text when tapping on linkTextField
+	
+	
 	func textViewDidEndEditing(_ textView: UITextView) {
-//		textView.text = textViewPlaceholder
+
 		textView.textColor = darkYellow
 	}
 	
 	func textViewDidBeginEditing(_ textView: UITextView) {
-//		textView.text = ""
+
 		textView.textColor = UIColor.black
 	}
 	
@@ -68,8 +67,7 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 			DataService.instance.createPost(
                 withMessage: textView.text,
                 forUID: (Auth.auth().currentUser?.uid)!,
-                withGroupKey: nil,
-                withLink: url, sendComplete:
+				postLink: url, sendComplete:
 				{(isComplete) in if isComplete {
 					
 					self.SendBtn.isEnabled = true
@@ -90,7 +88,7 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 	@IBAction func BackBtnAction(_ sender: Any) {
 		dismiss(animated: true, completion: nil)
 	}
-	//TODO: Remove this
+	/// - ToDo: Remove this
 	@IBAction func SwipeDownKeyboardGesture(_ sender: Any) {
 		textView.resignFirstResponder()
 	}

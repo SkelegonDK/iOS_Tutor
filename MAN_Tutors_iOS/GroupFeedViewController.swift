@@ -44,12 +44,12 @@ class GroupFeedViewController: UIViewController {
 		
 		}
 		
-		DataService.instance.GROUPS_REF.observe(.value, with: { (snapshot) in
-			DataService.instance.getAllMessagesFor(group: self.group!) { (returnedGroupMessages) in
-                self.groupMessages = returnedGroupMessages.reversed()
-				self.tableView.reloadData()
-			}
-		})
+//		DataService.instance.GROUPS_REF.observe(.value, with: { (snapshot) in
+//			DataService.instance.getAllMessagesFor(group: self.group!) { (returnedGroupMessages) in
+//                self.groupMessages = returnedGroupMessages.reversed()
+//				self.tableView.reloadData()
+//			}
+//		})
 		
 		
 		
@@ -108,7 +108,7 @@ extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.LinkLbl.isHidden = false
         }
-		//TODO:
+
 		DataService.instance.getUsername(forUID: message.senderId) { (email) in
 			cell.configureCell(profileImage: #imageLiteral(resourceName: "second"), email: email, content: message.content)
 		}
@@ -118,21 +118,22 @@ extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cellLink = groupMessages[indexPath.row].postLink
-        // TODO: If URL is empty, if not disable interaction
+        /// - ToDo: If URL is empty, if not disable interaction
         let url =  URL(string: cellLink )!
         
         UIApplication.shared.open(url, options: [:])
         
     }
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		// TODO: refactor into function that checks current user with message sender
+		/// - ToDo: refactor into function that checks current user with message sender
 		let currentUser = Auth.auth().currentUser!
 		if (currentUser.uid == groupMessages[indexPath.row].senderId) {
 			return true
 		}
 		return false
 	}
-    
+	
+    /// - ToDo: if URL is not valid, delete from database
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		
 		if (editingStyle == UITableViewCellEditingStyle.delete) {
@@ -153,8 +154,8 @@ extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 		
 	}
-    //TODO: if URL is not valid, delete from database
-    //TODO: move function to Dataservice object so it can be accessed globally
+	
+    /// - ToDo: move function to Dataservice object so it can be accessed globally
     /// Checks if a URL string is a valid URL and returns a boolean value
 	
 }

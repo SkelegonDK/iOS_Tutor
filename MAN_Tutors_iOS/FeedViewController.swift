@@ -8,9 +8,29 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 	class FeedViewController: UIViewController {
-
+		/// Sets notification access to a default of false
+		var isGrantedNotificationAccess = false
+		/// initializes an unmutable notification object
+		func makeNotificationContent() -> UNMutableNotificationContent {
+			let content = UNMutableNotificationContent()
+			content.title = "Hi " + (Auth.auth().currentUser?.email!)!
+			content.body = "You are next, please prepare to be called by a tutor"
+			content.userInfo = ["step": 0]
+			return content
+			
+		}
+		
+		func addNotification(trigger:UNNotificationTrigger?,content: UNMutableNotificationContent, identifier: String) {
+			let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+			UNUserNotificationCenter.current().add(request) { (error) in
+				if error != nil {
+					print("error adding notification:\(String(describing: error?.localizedDescription))")
+				}
+			}
+		}
 	@IBOutlet weak var tableView: UITableView!
 		
 	var postArray = [Post]()
@@ -21,19 +41,36 @@ import Firebase
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
 		
-	}
+		UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]) { (granted, error) in
+			self.isGrantedNotificationAccess = granted
+			if !granted {
+				// add alert to complain user
+			}
+		}
 		
-	
-
-	
+	}
 		
 	override func viewDidAppear(_ animated: Bool) {
 		
 		super.viewDidAppear(animated)
 		DataService.instance.FEED_REF.observe(.value) { (DataSnapshot) in
 			
+			
 			DataService.instance.getFeedData { (returnedPostsArray) in
+				
 				self.postArray = returnedPostsArray
+				
+				let next = returnedPostsArray.first
+				
+				if  next?.senderId == Auth.auth().currentUser?.uid {
+					
+					if self.isGrantedNotificationAccess == true {
+						let content = self.makeNotificationContent()
+						let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+						self.addNotification(trigger: trigger, content: content, identifier: "message.next")
+					}
+				}
+				
 				self.tableView.reloadData()
 				
 			}
@@ -42,10 +79,7 @@ import Firebase
 		
 }
 
-
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
-	
-	
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
@@ -71,9 +105,11 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 		
 			DataService.instance.getUsername(forUID: post.senderId) { (returnedUserName) in
 			cell.configureCell(profileImage: image!, email: returnedUserName, content: post.content, number: number )
+				
 		}
 		
-		if DataService.instance.verifyUrl(urlString: postArray[indexPath.row].postLink) {
+		if DataService.instance.verifyUrl(urlString: postArray[indexPath.row].postLink) == true {
+			
             cell.LinkLbl.isHidden = false
         } else {
             cell.LinkLbl.isHidden = true
@@ -81,14 +117,14 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		return cell
 	}
-    
+	/// - ToDo: Add notfication from tutor tu user, to come when tutor X takes studen issue Y
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
 		let cellLink = postArray[indexPath.row].postLink
 		
         // If URL is valid open url, if not disable interaction
 		if DataService.instance.verifyUrl(urlString: cellLink) == true {
-            //TODO: add http:// to url paths in database
+            /// - ToDo: add http:// to url paths in database
 			let url = URL(string: cellLink )!
 			
             UIApplication.shared.open(url, options: [:])
@@ -97,11 +133,10 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.isUserInteractionEnabled = false
         }
 		
-        
     }
 	
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		// TODO: refactor into function that checks current user with message sender
+		/// - ToDo: refactor into function that checks current user with message sender
 		let currentUser = Auth.auth().currentUser!
 		if (currentUser.uid == postArray[indexPath.row].senderId) {
 			return true

@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>62775684025-j0pgoodecmterbu4fai5mjo90q5qkcjm.apps.googleusercontent.com</string>
+	<string>327866023713-cdc3m89kls7g4bq24h63d7rkskrgq72t.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.62775684025-j0pgoodecmterbu4fai5mjo90q5qkcjm</string>
+	<string>com.googleusercontent.apps.327866023713-cdc3m89kls7g4bq24h63d7rkskrgq72t</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA_FE2PZBsGlwoSZEDLe5yvIcQEaCBBVOY</string>
+	<string>AIzaSyCDttIhhBlXLKrK9_hnmRiX5diLIIJkKVY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>62775684025</string>
+	<string>327866023713</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>dk.skelegon.MAN-Tutors-iOS</string>
+	<string>dk.skelegon.Tutors-iOS</string>
 	<key>PROJECT_ID</key>
-	<string>tutor-ce37e</string>
+	<string>tutors-ios</string>
 	<key>STORAGE_BUCKET</key>
-	<string>tutor-ce37e.appspot.com</string>
+	<string>tutors-ios.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:62775684025:ios:6e8138ed72ccb54c</string>
+	<string>1:327866023713:ios:3e5493aa87b2b790</string>
 	<key>DATABASE_URL</key>
-	<string>https://tutor-ce37e.firebaseio.com</string>
+	<string>https://tutors-ios.firebaseio.com</string>
 </dict>
 </plist>
