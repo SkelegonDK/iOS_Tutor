@@ -21,12 +21,15 @@ class AuthService {
 			userCreated(false,error)
 				return
 		}
-			let userData = ["provider": user.providerID, "email": user.email]
+			let userData = ["provider": user.providerID, "email": user.email,"called": "0"]
 			DataService.instance.createUser(uid:user.uid, userData: userData)
 			userCreated(true,nil)
 		}
 
 	}
+	
+	
+	
 	/// Takes email and password and returns a true if the login is successfull
 	func LoginUser(withEmail email: String, andPassword password: String, loginAccepted: @escaping(_ status: Bool , _ error:Error?)->()) {
 		Auth.auth().signIn(withEmail: email, password: password) { (user, error) in

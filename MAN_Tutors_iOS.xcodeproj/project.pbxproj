@@ -29,6 +29,8 @@
 		8DAF624C1F5AF4140021338C /* ViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF624B1F5AF4140021338C /* ViewShadow.swift */; };
 		8DAF624E1F5AF7440021338C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF624D1F5AF7440021338C /* AuthService.swift */; };
 		8DBBF1BB1F65599000535C88 /* groupClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBF1BA1F65599000535C88 /* groupClass.swift */; };
+		8DC84D91200D2B220041A8FA /* PixelOperator-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DC84D8F200D2B210041A8FA /* PixelOperator-Bold.ttf */; };
+		8DC84D92200D2B220041A8FA /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8DC84D90200D2B220041A8FA /* BebasNeue.otf */; };
 		8DF5C0091F5ADDF300FA836F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF5C0081F5ADDF300FA836F /* DataService.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		8DAF624B1F5AF4140021338C /* ViewShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewShadow.swift; sourceTree = "<group>"; };
 		8DAF624D1F5AF7440021338C /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		8DBBF1BA1F65599000535C88 /* groupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupClass.swift; sourceTree = "<group>"; };
+		8DC84D8F200D2B210041A8FA /* PixelOperator-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PixelOperator-Bold.ttf"; path = "../../../../../../../Downloads/TUTOR_MMD_2017_Folder/Document fonts/PixelOperator-Bold.ttf"; sourceTree = "<group>"; };
+		8DC84D90200D2B220041A8FA /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BebasNeue.otf; path = "../../../../../../../Downloads/TUTOR_MMD_2017_Folder/Document fonts/BebasNeue.otf"; sourceTree = "<group>"; };
 		8DF5C0081F5ADDF300FA836F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DEF4D35464576DDFDB3E3E60 /* Pods-MAN_Tutors_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAN_Tutors_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAN_Tutors_iOS/Pods-MAN_Tutors_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +117,8 @@
 		8D4A74391F5ADA34008A5C20 /* MAN_Tutors_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				8DC84D90200D2B220041A8FA /* BebasNeue.otf */,
+				8DC84D8F200D2B210041A8FA /* PixelOperator-Bold.ttf */,
 				8D67D6A72007CF2E005585E5 /* GoogleService-Info.plist */,
 				8D4A74481F5ADA34008A5C20 /* Info.plist */,
 				8D8CEFC41FDEB13B00E205A2 /* MAN_Tutors_iOS.entitlements */,
@@ -247,8 +253,10 @@
 			files = (
 				8D4A74471F5ADA34008A5C20 /* LaunchScreen.storyboard in Resources */,
 				8D67D6A82007CF2E005585E5 /* GoogleService-Info.plist in Resources */,
+				8DC84D92200D2B220041A8FA /* BebasNeue.otf in Resources */,
 				8D4A74441F5ADA34008A5C20 /* Assets.xcassets in Resources */,
 				8D4A74421F5ADA34008A5C20 /* Main.storyboard in Resources */,
+				8DC84D91200D2B220041A8FA /* PixelOperator-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

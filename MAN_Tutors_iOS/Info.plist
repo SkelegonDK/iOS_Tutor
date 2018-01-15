@@ -35,7 +35,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>8-BIT WONDER.TTF</string>
+		<string>PixelOperator-Bold.ttf</string>
+		<string>BebasNeue.otf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

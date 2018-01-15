@@ -84,6 +84,29 @@ func createPost(withMessage message: String, forUID uid:String, postLink: String
 			}
 		})
 	}
+	/// ToDo: remove
+	func wasUserCalled(forUID uid: String, handler: @escaping (_ userCalled: String) -> ()) {
+		USERS_REF.observeSingleEvent(of: .value, with: { (userSnapshot) in
+			guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
+			for user in userSnapshot {
+				if user.key == uid {
+					handler(user.childSnapshot(forPath: "called").value as! String)
+				}
+			}
+		})
+	}
+	
+	func makeUserCalled(forUID uid: String, calledState status:String, handler: @escaping (_ userCalled: String) -> ()) {
+		USERS_REF.observeSingleEvent(of: .value, with: { (userSnapshot) in
+			guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
+			for user in userSnapshot {
+				if user.key == uid {
+					self.USERS_REF.child(uid).updateChildValues(["called" : status])
+				}
+			}
+		})
+	}
+	
 	
 	/// Function gets post data from DB reference. Then a post array is created to hold all the posts. Then the data is assigned to the Post data model. Then the handler returs a post array that the app can use.
 	func getFeedData(handler: @escaping(_ posts:[Post]) -> ()) {
