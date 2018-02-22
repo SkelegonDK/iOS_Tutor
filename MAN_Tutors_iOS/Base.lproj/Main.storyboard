@@ -334,61 +334,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Group" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="137.5" y="313" width="100" height="41"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="79.5" y="362" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SNt-GH-zT1">
-                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
-                                <color key="backgroundColor" red="0.92941176469999998" green="0.87843137250000003" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.55300000000000005" green="0.52200000000000002" blue="0.042999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.92941176469999998" green="0.87843137250000003" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="44" id="KgN-cX-Z2t" customClass="InfoTableViewCell" customModule="MAN_Tutors_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KgN-cX-Z2t" id="oqg-vZ-fqX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xv1-B6-loO">
-                                                    <rect key="frame" x="4" y="0.0" width="367" height="43.5"/>
-                                                    <color key="backgroundColor" red="0.92941176469999998" green="0.87843137250000003" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                                        <dataDetectorTypes key="dataDetectorTypes" none="YES"/>
-                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                                        <wkPreferences key="preferences"/>
-                                                    </wkWebViewConfiguration>
-                                                </wkWebView>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.92941176469999998" green="0.87843137250000003" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstItem="Xv1-B6-loO" firstAttribute="top" secondItem="oqg-vZ-fqX" secondAttribute="top" id="F8L-Gq-gwg"/>
-                                                <constraint firstAttribute="bottom" secondItem="Xv1-B6-loO" secondAttribute="bottom" id="O3c-W9-8h5"/>
-                                                <constraint firstAttribute="trailing" secondItem="Xv1-B6-loO" secondAttribute="trailing" constant="4" id="VeC-DK-LlJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="Xv1-B6-loO" secondAttribute="bottom" id="a1y-np-vCg"/>
-                                                <constraint firstItem="Xv1-B6-loO" firstAttribute="centerY" secondItem="oqg-vZ-fqX" secondAttribute="centerY" id="fgQ-dw-Iaa"/>
-                                                <constraint firstItem="Xv1-B6-loO" firstAttribute="leading" secondItem="oqg-vZ-fqX" secondAttribute="leading" constant="4" id="isK-K3-FAh"/>
-                                                <constraint firstItem="Xv1-B6-loO" firstAttribute="centerX" secondItem="oqg-vZ-fqX" secondAttribute="centerX" id="xCO-ar-1Gd"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.92941176469999998" green="0.87843137250000003" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <connections>
-                                            <outlet property="webView" destination="Xv1-B6-loO" id="RVa-CD-6g6"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-Qr-4x2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
@@ -409,31 +354,36 @@
                                     <constraint firstAttribute="height" constant="100" id="f6A-a3-a58"/>
                                 </constraints>
                             </view>
+                            <wkWebView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iy0-T6-OW9">
+                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
+                                    <dataDetectorTypes key="dataDetectorTypes"/>
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences" javaScriptEnabled="NO"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wUM-Qr-4x2" secondAttribute="trailing" id="1fg-39-bZM"/>
-                            <constraint firstAttribute="trailing" secondItem="SNt-GH-zT1" secondAttribute="trailing" id="9BT-lH-Tw7"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
+                            <constraint firstAttribute="trailing" secondItem="Iy0-T6-OW9" secondAttribute="trailing" id="6NH-Rl-2Wx"/>
                             <constraint firstAttribute="trailing" secondItem="wUM-Qr-4x2" secondAttribute="trailing" id="EjH-8Y-TK3"/>
                             <constraint firstItem="wUM-Qr-4x2" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="JHQ-MH-gb7"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstItem="SNt-GH-zT1" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="h8F-IA-c8b"/>
+                            <constraint firstItem="Iy0-T6-OW9" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="LAE-K4-tfV"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Iy0-T6-OW9" secondAttribute="bottom" id="dwI-xJ-FG4"/>
                             <constraint firstItem="wUM-Qr-4x2" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="hPC-aE-9Og"/>
                             <constraint firstItem="wUM-Qr-4x2" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="iBf-6m-f5K"/>
-                            <constraint firstItem="SNt-GH-zT1" firstAttribute="top" secondItem="wUM-Qr-4x2" secondAttribute="bottom" id="kKS-e1-BZo"/>
+                            <constraint firstItem="Iy0-T6-OW9" firstAttribute="top" secondItem="wUM-Qr-4x2" secondAttribute="bottom" id="ipl-S9-gDR"/>
                             <constraint firstItem="wUM-Qr-4x2" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="lvv-uS-Oh6"/>
                             <constraint firstAttribute="trailing" secondItem="wUM-Qr-4x2" secondAttribute="trailing" id="njg-P1-rnB"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="SNt-GH-zT1" secondAttribute="bottom" id="uFk-zt-FjM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="&lt;Info/&gt;" image="ic_info_outline_36pt" selectedImage="ic_info_outline_36pt" id="cPa-gy-q4n">
                         <inset key="imageInsets" minX="120" minY="0.0" maxX="120" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="tableView" destination="SNt-GH-zT1" id="Gup-7c-AvO"/>
+                        <outlet property="WebView" destination="Iy0-T6-OW9" id="aj9-Bc-iTr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
