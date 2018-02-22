@@ -45,6 +45,7 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 	func textViewDidBeginEditing(_ textView: UITextView) {
 
 		textView.textColor = UIColor.black
+		textView.text = ""
 	}
 	
 	

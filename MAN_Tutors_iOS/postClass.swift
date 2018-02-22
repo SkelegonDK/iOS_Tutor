@@ -14,6 +14,8 @@ class Post {
 	private var _postId: String
 	private var _postLink: String
 	
+	
+	
 	var content: String {
 		return _content
 	}

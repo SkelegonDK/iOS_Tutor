@@ -33,7 +33,7 @@ class UserViewController: UIViewController {
 		self.AdminLbl.text = "Admin " + "🔥📖🔥"
 		
 		/// If user is admin show admin view
-		if (self.userName.text == "test@test.com") {
+		if (self.userName.text == "tutor@tutor.com") {
 			self.AdminView.isHidden = false;
 		}
 	}

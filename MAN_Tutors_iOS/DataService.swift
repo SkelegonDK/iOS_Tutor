@@ -63,7 +63,7 @@ func createPost(withMessage message: String, forUID uid:String, postLink: String
 	
     /// Function checks post id against current user id, before deleting the post object from the database
 	func deletePost(forUID uid: String, forSenderId senderId: String, sendComplete:@escaping(_ status: Bool) -> ()) {
-		if (senderId == Auth.auth().currentUser!.uid) {
+		if (senderId == Auth.auth().currentUser!.uid) || Auth.auth().currentUser!.uid == "Yma031SORqYQUCzFGDF7Todl35C2" {
 		FEED_REF.child(uid).removeValue()
 			
 		}
@@ -248,6 +248,7 @@ func createPost(withMessage message: String, forUID uid:String, postLink: String
 	/// - parameter urlString:string of the link checked
 	/// - returns:if URL is valid returns true
     func verifyUrl(urlString: String?) -> Bool {
+		
         guard let urlString = urlString,
             let url = URL(string: urlString) else {
                 return false

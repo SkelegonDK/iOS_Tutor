@@ -12,13 +12,12 @@
 		8D0802931F5C0E5E00CC63C9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0802921F5C0E5E00CC63C9 /* PostTableViewCell.swift */; };
 		8D1BA0D21FE83F61008F1174 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BA0D11FE83F61008F1174 /* InfoTableViewCell.swift */; };
 		8D32E5AB1F5C69CC00D22979 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32E5AA1F5C69CC00D22979 /* UserTableViewCell.swift */; };
+		8D3D3A5E203EB149004641AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D3D3A5D203EB149004641AF /* GoogleService-Info.plist */; };
 		8D4A743D1F5ADA34008A5C20 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A743C1F5ADA34008A5C20 /* FeedViewController.swift */; };
 		8D4A74421F5ADA34008A5C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4A74401F5ADA34008A5C20 /* Main.storyboard */; };
 		8D4A74441F5ADA34008A5C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4A74431F5ADA34008A5C20 /* Assets.xcassets */; };
 		8D4A74471F5ADA34008A5C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4A74451F5ADA34008A5C20 /* LaunchScreen.storyboard */; };
 		8D5E844F200680D600C13837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E844E200680D600C13837 /* AppDelegate.swift */; };
-		8D67D6A82007CF2E005585E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D67D6A72007CF2E005585E5 /* GoogleService-Info.plist */; };
-		8D684BAC20067981003E192B /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D684BAB20067981003E192B /* MessageService.swift */; };
 		8D6C66471F5B44EA003A8BF0 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6C66461F5B44EA003A8BF0 /* UserViewController.swift */; };
 		8D6C66491F5B5011003A8BF0 /* PostTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6C66481F5B5011003A8BF0 /* PostTextView.swift */; };
 		8D6C664B1F5B522F003A8BF0 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6C664A1F5B522F003A8BF0 /* CreateViewController.swift */; };
@@ -41,6 +40,7 @@
 		8D0802921F5C0E5E00CC63C9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8D1BA0D11FE83F61008F1174 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		8D32E5AA1F5C69CC00D22979 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		8D3D3A5D203EB149004641AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D4A74371F5ADA34008A5C20 /* MAN_Tutors_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAN_Tutors_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4A743C1F5ADA34008A5C20 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8D4A74411F5ADA34008A5C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,12 +48,9 @@
 		8D4A74461F5ADA34008A5C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D4A74481F5ADA34008A5C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D5E844E200680D600C13837 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D67D6A72007CF2E005585E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8D684BAB20067981003E192B /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		8D6C66461F5B44EA003A8BF0 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		8D6C66481F5B5011003A8BF0 /* PostTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTextView.swift; sourceTree = "<group>"; };
 		8D6C664A1F5B522F003A8BF0 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
-		8D8CEFC41FDEB13B00E205A2 /* MAN_Tutors_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MAN_Tutors_iOS.entitlements; sourceTree = "<group>"; };
 		8D94CE5B1FE82B9300B7B526 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		8DAF62451F5AEED00021338C /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		8DAF62471F5AEF2A0021338C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -119,9 +116,8 @@
 			children = (
 				8DC84D90200D2B220041A8FA /* BebasNeue.otf */,
 				8DC84D8F200D2B210041A8FA /* PixelOperator-Bold.ttf */,
-				8D67D6A72007CF2E005585E5 /* GoogleService-Info.plist */,
 				8D4A74481F5ADA34008A5C20 /* Info.plist */,
-				8D8CEFC41FDEB13B00E205A2 /* MAN_Tutors_iOS.entitlements */,
+				8D3D3A5D203EB149004641AF /* GoogleService-Info.plist */,
 				8D5E844E200680D600C13837 /* AppDelegate.swift */,
 				8D4A74401F5ADA34008A5C20 /* Main.storyboard */,
 				8D4A74451F5ADA34008A5C20 /* LaunchScreen.storyboard */,
@@ -174,7 +170,6 @@
 			children = (
 				8DF5C0081F5ADDF300FA836F /* DataService.swift */,
 				8DAF624D1F5AF7440021338C /* AuthService.swift */,
-				8D684BAB20067981003E192B /* MessageService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -214,12 +209,12 @@
 				TargetAttributes = {
 					8D4A74361F5ADA34008A5C20 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4JLUJ8SU2K;
+						DevelopmentTeam = TEM22B7DDE;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -252,8 +247,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D4A74471F5ADA34008A5C20 /* LaunchScreen.storyboard in Resources */,
-				8D67D6A82007CF2E005585E5 /* GoogleService-Info.plist in Resources */,
 				8DC84D92200D2B220041A8FA /* BebasNeue.otf in Resources */,
+				8D3D3A5E203EB149004641AF /* GoogleService-Info.plist in Resources */,
 				8D4A74441F5ADA34008A5C20 /* Assets.xcassets in Resources */,
 				8D4A74421F5ADA34008A5C20 /* Main.storyboard in Resources */,
 				8DC84D91200D2B220041A8FA /* PixelOperator-Bold.ttf in Resources */,
@@ -272,7 +267,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MAN_Tutors_iOS/Pods-MAN_Tutors_iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -280,7 +274,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -344,7 +337,6 @@
 				8DAF62461F5AEED00021338C /* AuthViewController.swift in Sources */,
 				8DAF624C1F5AF4140021338C /* ViewShadow.swift in Sources */,
 				8D6C66491F5B5011003A8BF0 /* PostTextView.swift in Sources */,
-				8D684BAC20067981003E192B /* MessageService.swift in Sources */,
 				8D6C664B1F5B522F003A8BF0 /* CreateViewController.swift in Sources */,
 				8DAF624A1F5AEF6B0021338C /* CutomTextfield.swift in Sources */,
 				8D5E844F200680D600C13837 /* AppDelegate.swift in Sources */,
@@ -485,11 +477,10 @@
 			baseConfigurationReference = DEF4D35464576DDFDB3E3E60 /* Pods-MAN_Tutors_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MAN_Tutors_iOS/MAN_Tutors_iOS.entitlements;
-				DEVELOPMENT_TEAM = 4JLUJ8SU2K;
+				DEVELOPMENT_TEAM = TEM22B7DDE;
 				INFOPLIST_FILE = MAN_Tutors_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "dk.skelegon.Tutors-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.skelegon.Tutors-iOS-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -501,11 +492,10 @@
 			baseConfigurationReference = 5541D9017CF12A90316059D6 /* Pods-MAN_Tutors_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MAN_Tutors_iOS/MAN_Tutors_iOS.entitlements;
-				DEVELOPMENT_TEAM = 4JLUJ8SU2K;
+				DEVELOPMENT_TEAM = TEM22B7DDE;
 				INFOPLIST_FILE = MAN_Tutors_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "dk.skelegon.Tutors-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.skelegon.Tutors-iOS-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
