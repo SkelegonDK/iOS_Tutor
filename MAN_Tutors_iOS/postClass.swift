@@ -36,6 +36,5 @@ class Post {
 		self._postId = postId
 		self._postLink = postLink
 	}
-	
-	
 }
+
