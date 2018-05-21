@@ -9,8 +9,13 @@ target 'MAN_Tutors_iOS' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  
   pod 'MaterialComponents/BottomAppBar'
-  pod 'MaterialComponents/TextFields'
+  pod 'MaterialComponents/TextFields+ColorThemer'
+  
+  pod 'MaterialComponents/schemes/Color'
+  pod 'MaterialComponents/schemes/Typography'
+  
   pod 'MaterialComponents/Buttons'
   pod 'MaterialComponents/NavigationBar'
   pod 'MaterialComponents/Cards'

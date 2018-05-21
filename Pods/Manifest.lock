@@ -71,6 +71,8 @@ PODS:
   - MaterialComponents/private/Shapes (55.1.0):
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
+  - MaterialComponents/schemes/Color (55.1.0)
+  - MaterialComponents/schemes/Typography (55.1.0)
   - MaterialComponents/ShadowElevations (55.1.0)
   - MaterialComponents/ShadowLayer (55.1.0):
     - MaterialComponents/ShadowElevations
@@ -80,6 +82,12 @@ PODS:
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
+  - "MaterialComponents/TextFields+ColorThemer (55.1.0)":
+    - MaterialComponents/TextFields
+    - MaterialComponents/Themes
+  - MaterialComponents/Themes (55.1.0):
+    - MaterialComponents/schemes/Color
+    - MaterialComponents/schemes/Typography
   - MaterialComponents/Typography (55.1.0):
     - MaterialComponents/private/Application
   - MDFInternationalization (1.0.4)
@@ -98,7 +106,7 @@ DEPENDENCIES:
   - MaterialComponents/Buttons
   - MaterialComponents/Cards
   - MaterialComponents/NavigationBar
-  - MaterialComponents/TextFields
+  - "MaterialComponents/TextFields+ColorThemer"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -131,6 +139,6 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: cf66e5d4666d1e1bce1c33dc9bd0b4c72538b6fd
+PODFILE CHECKSUM: c860440acc0c402736e05e8fb53b5affbc0876c0
 
 COCOAPODS: 1.5.2

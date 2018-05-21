@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import MaterialComponents
+import MaterialComponents.MaterialTextFields_ColorThemer
 
 class LoginViewController: UIViewController {
 
-	@IBOutlet weak var emailInput: UITextField!
-	@IBOutlet weak var passwordInput: UITextField!
+	@IBOutlet weak var emailInput: MDCTextField!
+	@IBOutlet weak var passwordInput: MDCTextField!
+	
+	var emailInputController: MDCTextInputControllerOutlined!
+   	var passwordInputController: MDCTextInputControllerOutlined!
+	
+	let colorScheme = MDCSemanticColorScheme()
 	
 	override func viewDidLoad() {
-		
+		emailInputController = MDCTextInputControllerOutlined(textInput: emailInput)
+		passwordInputController = MDCTextInputControllerOutlined(textInput: passwordInput)
 		super.viewDidLoad()
 		
     }
