@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MaterialComponents
 
 class CreateViewController: UIViewController, UITextViewDelegate {
 
@@ -15,11 +16,13 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet weak var userEmail: UILabel!
 	@IBOutlet weak var textView: UITextView!
 	@IBOutlet weak var SendBtn: UIButton!
-	@IBOutlet weak var LinkTextField: UITextField!
+	@IBOutlet weak var LinkTextField: MDCTextField!
 	
 	
 	let darkYellow :UIColor = UIColor(red: 0.553, green: 0.522, blue: 0.043, alpha: 1)
 	let textViewPlaceholder: String = "Tap to write or swipe down keyboard\nPlease write a short description of your issue..."
+	
+	var linktextController: MDCTextInputControllerOutlined?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -27,6 +30,9 @@ class CreateViewController: UIViewController, UITextViewDelegate {
 		
 		textView.text = textViewPlaceholder
 		textView.textColor = darkYellow
+		
+		linktextController = MDCTextInputControllerOutlined(textInput: LinkTextField)
+		
 	
     }
 	
