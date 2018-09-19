@@ -16,7 +16,7 @@ target 'MAN_Tutors_iOS' do
   pod 'MaterialComponents/schemes/Color'
   pod 'MaterialComponents/schemes/Typography'
   
-  pod 'MaterialComponents/Buttons'
+  pod 'MaterialComponents/Buttons+ButtonThemer'
   pod 'MaterialComponents/NavigationBar'
   pod 'MaterialComponents/Cards'
 end

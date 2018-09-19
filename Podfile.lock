@@ -1,45 +1,73 @@
 PODS:
-  - Firebase/Auth (5.0.1):
+  - Firebase/Auth (5.8.0):
     - Firebase/CoreOnly
-    - FirebaseAuth (= 5.0.0)
-  - Firebase/Core (5.0.1):
+    - FirebaseAuth (= 5.0.4)
+  - Firebase/Core (5.8.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 5.0.0)
-  - Firebase/CoreOnly (5.0.1):
-    - FirebaseCore (= 5.0.1)
-  - Firebase/Database (5.0.1):
+    - FirebaseAnalytics (= 5.1.2)
+  - Firebase/CoreOnly (5.8.0):
+    - FirebaseCore (= 5.1.3)
+  - Firebase/Database (5.8.0):
     - Firebase/CoreOnly
-    - FirebaseDatabase (= 5.0.0)
-  - FirebaseAnalytics (5.0.0):
-    - FirebaseCore (~> 5.0)
-    - FirebaseInstanceID (~> 3.0)
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - FirebaseDatabase (= 5.0.3)
+  - FirebaseAnalytics (5.1.2):
+    - FirebaseCore (~> 5.1)
+    - FirebaseInstanceID (~> 3.2)
+    - GoogleAppMeasurement (~> 5.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2.0)
+    - GoogleUtilities/MethodSwizzler (~> 5.2.0)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
-  - FirebaseAuth (5.0.0):
+  - FirebaseAuth (5.0.4):
+    - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.0)
+    - GoogleUtilities/Environment (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (5.0.1):
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
-  - FirebaseDatabase (5.0.0):
+  - FirebaseAuthInterop (1.0.0)
+  - FirebaseCore (5.1.3):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDatabase (5.0.3):
     - FirebaseCore (~> 5.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (3.0.0):
-    - FirebaseCore (~> 5.0)
-  - GoogleToolboxForMac/Defines (2.1.4)
-  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
-    - GoogleToolboxForMac/Defines (= 2.1.4)
-  - GTMSessionFetcher/Core (1.1.15)
+  - FirebaseInstanceID (3.2.1):
+    - FirebaseCore (~> 5.1)
+    - GoogleUtilities/Environment (~> 5.2)
+  - GoogleAppMeasurement (5.1.2):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2.0)
+    - GoogleUtilities/MethodSwizzler (~> 5.2.0)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (5.2.3):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.2.3)
+  - GoogleUtilities/Logger (5.2.3):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.2.3):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.2.3):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.2.3)"
+  - GoogleUtilities/Reachability (5.2.3):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.2.0)
   - leveldb-library (1.20)
-  - MaterialComponents/AnimationTiming (55.1.0)
-  - MaterialComponents/BottomAppBar (55.1.0):
+  - MaterialComponents/AnimationTiming (63.0.0)
+  - MaterialComponents/BottomAppBar (63.0.0):
     - MaterialComponents/Buttons
     - MaterialComponents/NavigationBar
     - MaterialComponents/private/Math
     - MDFInternationalization
-  - MaterialComponents/ButtonBar (55.1.0):
+  - MaterialComponents/ButtonBar (63.0.0):
     - MaterialComponents/Buttons
+    - MaterialComponents/private/Application
     - MDFInternationalization
-  - MaterialComponents/Buttons (55.1.0):
+  - MaterialComponents/Buttons (63.0.0):
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
     - MaterialComponents/private/Shapes
@@ -48,49 +76,60 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - MaterialComponents/Cards (55.1.0):
+  - "MaterialComponents/Buttons+ButtonThemer (63.0.0)":
+    - MaterialComponents/Buttons
+    - "MaterialComponents/Buttons+ColorThemer"
+    - "MaterialComponents/Buttons+TypographyThemer"
+  - "MaterialComponents/Buttons+ColorThemer (63.0.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Color
+  - "MaterialComponents/Buttons+TypographyThemer (63.0.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Typography
+  - MaterialComponents/Cards (63.0.0):
     - MaterialComponents/Ink
     - MaterialComponents/private/Icons/ic_check_circle
     - MaterialComponents/private/Math
     - MaterialComponents/private/Shapes
     - MaterialComponents/ShadowLayer
-  - MaterialComponents/Ink (55.1.0):
+  - MaterialComponents/Ink (63.0.0):
     - MaterialComponents/private/Math
-  - MaterialComponents/NavigationBar (55.1.0):
+  - MaterialComponents/NavigationBar (63.0.0):
     - MaterialComponents/ButtonBar
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - MaterialComponents/Palettes (55.1.0)
-  - MaterialComponents/private/Application (55.1.0)
-  - MaterialComponents/private/Icons/Base (55.1.0)
-  - MaterialComponents/private/Icons/ic_check_circle (55.1.0):
+  - MaterialComponents/Palettes (63.0.0)
+  - MaterialComponents/private/Application (63.0.0)
+  - MaterialComponents/private/Icons/Base (63.0.0)
+  - MaterialComponents/private/Icons/ic_check_circle (63.0.0):
     - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/Math (55.1.0)
-  - MaterialComponents/private/Shapes (55.1.0):
+  - MaterialComponents/private/Math (63.0.0)
+  - MaterialComponents/private/Shapes (63.0.0):
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
-  - MaterialComponents/schemes/Color (55.1.0)
-  - MaterialComponents/schemes/Typography (55.1.0)
-  - MaterialComponents/ShadowElevations (55.1.0)
-  - MaterialComponents/ShadowLayer (55.1.0):
+  - MaterialComponents/schemes/Color (63.0.0)
+  - MaterialComponents/schemes/Typography (63.0.0)
+  - MaterialComponents/ShadowElevations (63.0.0)
+  - MaterialComponents/ShadowLayer (63.0.0):
     - MaterialComponents/ShadowElevations
-  - MaterialComponents/TextFields (55.1.0):
+  - MaterialComponents/TextFields (63.0.0):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/Palettes
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
-  - "MaterialComponents/TextFields+ColorThemer (55.1.0)":
+  - "MaterialComponents/TextFields+ColorThemer (63.0.0)":
     - MaterialComponents/TextFields
     - MaterialComponents/Themes
-  - MaterialComponents/Themes (55.1.0):
+  - MaterialComponents/Themes (63.0.0):
     - MaterialComponents/schemes/Color
     - MaterialComponents/schemes/Typography
-  - MaterialComponents/Typography (55.1.0):
+  - MaterialComponents/Typography (63.0.0):
     - MaterialComponents/private/Application
-  - MDFInternationalization (1.0.4)
+    - MaterialComponents/private/Math
+  - MDFInternationalization (1.1.0)
   - MDFTextAccessibility (1.2.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -103,9 +142,11 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - MaterialComponents/BottomAppBar
-  - MaterialComponents/Buttons
+  - "MaterialComponents/Buttons+ButtonThemer"
   - MaterialComponents/Cards
   - MaterialComponents/NavigationBar
+  - MaterialComponents/schemes/Color
+  - MaterialComponents/schemes/Typography
   - "MaterialComponents/TextFields+ColorThemer"
 
 SPEC REPOS:
@@ -113,10 +154,12 @@ SPEC REPOS:
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
+    - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseDatabase
     - FirebaseInstanceID
-    - GoogleToolboxForMac
+    - GoogleAppMeasurement
+    - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
     - MaterialComponents
@@ -125,20 +168,22 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
-  Firebase: d6861c2059d8c32d1e6dd8932e22ada346d90a3a
-  FirebaseAnalytics: 19812b49fa5f283dd6b23edf8a14b5d477029ab8
-  FirebaseAuth: acbeef02fe7c3a26624e309849f3fe30c84115af
-  FirebaseCore: cafc814b2d84fc8733f09e653041cc2165332ad7
-  FirebaseDatabase: 697eb53e5b4fe7cd4fa8756c1f82a9fca011345f
-  FirebaseInstanceID: 83e0040351565df711a5db3d8ebe5ea21aca998a
-  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
-  GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  Firebase: 25812f43e7a53b11ae2f0a5f4c6d12faeb1f7cd7
+  FirebaseAnalytics: df15839e9c6ca6bd14d2e8ab6b0c672e6c49097e
+  FirebaseAuth: 504b198ceb3472dca5c65bb95544ea44cfc9439e
+  FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
+  FirebaseCore: 27bd80e5bfaaf9552a1f5cacb4c7e8bb925bab22
+  FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
+  FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
+  GoogleAppMeasurement: fc4a4c3fe0144db9313cbf443ffe62e6b1d6268c
+  GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
+  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  MaterialComponents: f4cd3085a673837e7ba4c6cf40d9da2f64566af1
-  MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
+  MaterialComponents: 4e0c0ee000e0dcbf5214b0054767ef9f8f812264
+  MDFInternationalization: b5b8626628abf026e630e5ebaeee563037712cbb
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: c860440acc0c402736e05e8fb53b5affbc0876c0
+PODFILE CHECKSUM: 7de114dc0d40df4f5300e903c4f534a9b3250fe9
 
 COCOAPODS: 1.5.2

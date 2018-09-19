@@ -5,7 +5,7 @@
 //  Created by Manuel Thomsen on 02/09/2017.
 //  Copyright © 2017 Manuel Thomsen. All rights reserved.
 //
-
+///ToDo: apply themes to all views
 import UIKit
 import MaterialComponents
 import MaterialComponents.MaterialTextFields_ColorThemer
@@ -14,15 +14,30 @@ class LoginViewController: UIViewController {
 
 	@IBOutlet weak var emailInput: MDCTextField!
 	@IBOutlet weak var passwordInput: MDCTextField!
+	@IBOutlet var signInbtn: MDCRaisedButton!
+	@IBOutlet var cancelBtn: MDCButton!
+	@IBOutlet var loginView: UIView!
 	
 	var emailInputController: MDCTextInputControllerOutlined!
    	var passwordInputController: MDCTextInputControllerOutlined!
 	
-	let colorScheme = MDCSemanticColorScheme()
+	let colorScheme = ApplicationScheme()
+	let appScheme = ApplicationScheme.shared.colorScheme
 	
 	override func viewDidLoad() {
+		loginView.backgroundColor = appScheme.backgroundColor
+		
+		MDCTextFieldColorThemer.applySemanticColorScheme(colorScheme.textFieldScheme, to: emailInput)
+		
+		
 		emailInputController = MDCTextInputControllerOutlined(textInput: emailInput)
 		passwordInputController = MDCTextInputControllerOutlined(textInput: passwordInput)
+		
+		MDCTextFieldColorThemer.applySemanticColorScheme(appScheme, to: emailInputController)
+		MDCTextFieldColorThemer.applySemanticColorScheme(appScheme, to: passwordInputController)
+		
+		MDCButtonColorThemer.applySemanticColorScheme(appScheme, to: self.signInbtn)
+		MDCButtonColorThemer.applySemanticColorScheme(appScheme, to: self.cancelBtn)
 		super.viewDidLoad()
 		
     }

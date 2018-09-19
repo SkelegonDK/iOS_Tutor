@@ -546,7 +546,7 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="xRy-C8-S1C">
                                         <rect key="frame" x="20" y="84.5" width="303" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwv-aR-hsi">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwv-aR-hsi" customClass="MDCRaisedButton">
                                                 <rect key="frame" x="26.5" y="0.0" width="250" height="50"/>
                                                 <color key="backgroundColor" red="0.55294117647058827" green="0.52156862745098043" blue="0.043137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -625,7 +625,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fxx-dE-KBx">
                                 <rect key="frame" x="36" y="190" width="303" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqa-yP-4hq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqa-yP-4hq" customClass="MDCRaisedButton">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="30"/>
                                         <fontDescription key="fontDescription" name="PixelOperator-Bold" family="Pixel Operator" pointSize="20"/>
                                         <state key="normal" title="&lt;Sign in/&gt;">
@@ -635,7 +635,7 @@
                                             <action selector="EnterBtnAction:" destination="TmD-3L-ZAG" eventType="touchUpInside" id="RHd-2A-RUb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emZ-gP-MER">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emZ-gP-MER" customClass="MDCButton">
                                         <rect key="frame" x="225" y="0.0" width="78" height="30"/>
                                         <fontDescription key="fontDescription" name="PixelOperator-Bold" family="Pixel Operator" pointSize="20"/>
                                         <state key="normal" title="&lt;Cancel/&gt;">
@@ -665,20 +665,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zij-kr-jq2" customClass="ViewShadow" customModule="MAN_Tutors_iOS" customModuleProvider="target">
-                                <rect key="frame" x="15" y="517" width="350" height="130"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="s4a-m6-b8j"/>
-                                    <constraint firstAttribute="width" constant="350" id="zAX-5b-7Kk"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176469999998" green="0.87843137250000003" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2ZL-Zz-h8P" firstAttribute="centerX" secondItem="Fib-lv-jmI" secondAttribute="centerX" id="3pu-HK-EUq"/>
-                            <constraint firstItem="zij-kr-jq2" firstAttribute="centerY" secondItem="Fib-lv-jmI" secondAttribute="centerY" constant="248.5" id="EVV-9Y-Teb"/>
-                            <constraint firstItem="zij-kr-jq2" firstAttribute="centerX" secondItem="Fib-lv-jmI" secondAttribute="centerX" constant="2.5" id="Kyr-vQ-xrm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z7i-ya-cGV" secondAttribute="trailing" constant="20" id="OXQ-aG-CLx"/>
                             <constraint firstItem="Z7i-ya-cGV" firstAttribute="top" secondItem="NaC-Mk-09u" secondAttribute="bottom" constant="70" id="Pqh-J8-dw2"/>
                             <constraint firstItem="Fxx-dE-KBx" firstAttribute="top" secondItem="Z7i-ya-cGV" secondAttribute="bottom" constant="20" id="Pxd-G5-nVP"/>
@@ -691,8 +681,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelBtn" destination="emZ-gP-MER" id="XhM-Aq-U1h"/>
                         <outlet property="emailInput" destination="UD9-De-Wqu" id="xs0-2w-HzX"/>
+                        <outlet property="loginView" destination="Fib-lv-jmI" id="4cm-I4-fbW"/>
                         <outlet property="passwordInput" destination="1rN-bN-Kj4" id="VBO-ZU-DvI"/>
+                        <outlet property="signInbtn" destination="uqa-yP-4hq" id="85g-Si-sDp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQ3-yg-QZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
